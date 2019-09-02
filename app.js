@@ -295,6 +295,8 @@ var UIController = (function() {
             document.querySelector(DOMstrings.inputBtn).classList.toggle('red');
         },
 
+        // some code...
+
         getDOMstrings: function() {
             return DOMstrings;
         }
@@ -322,17 +324,6 @@ var controller = (function(budgetCtrl, UICtrl) {
         document.querySelector(DOM.inputType).addEventListener('change', UICtrl.changedType);
     }
 
-
-
-    var updateBudget = function() {
-        // 1. Calculate the budget
-        budgetCtrl.calculateBudget();
-        // 2. Return the budget
-        var budget = budgetCtrl.getBudget();
-        // 3. Display the budget
-        UICtrl.displayBudget(budget);
-    };
-
     var updatePercentages = function() {
 
         // 1. Calculate percentages
@@ -341,6 +332,15 @@ var controller = (function(budgetCtrl, UICtrl) {
         var percentages = budgetCtrl.getPercentages();
         // 3. Update the UI with the new percentages
         UICtrl.displayPercentages(percentages);
+    };
+
+    var updateBudget = function() {
+        // 1. Calculate the budget
+        budgetCtrl.calculateBudget();
+        // 2. Return the budget
+        var budget = budgetCtrl.getBudget();
+        // 3. Display the budget
+        UICtrl.displayBudget(budget);
     };
 
     var ctrlAddItem = function() {
